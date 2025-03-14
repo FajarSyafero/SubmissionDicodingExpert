@@ -1,5 +1,6 @@
 package com.coco.core.ui
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +14,7 @@ class MovieAdapter(private val itemClick: (Movie) -> Unit) :
 
     private var items: MutableList<Movie> = mutableListOf()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setItems(items: List<Movie>) {
         this.items.clear()
         this.items.addAll(items)

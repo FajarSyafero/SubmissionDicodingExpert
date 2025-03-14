@@ -1,0 +1,59 @@
+version: 2.1
+
+orbs:
+  android: circleci/android@2.4.0
+
+jobs:
+  build:
+    docker:
+      - image: cimg/android:2024.01-ndk
+
+    environment:
+      _JAVA_OPTIONS: "-Xmx4g -XX:+UseParallelGC"  # Increase JVM heap size
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - android-proguard-cache-{{ .Branch }}-{{ checksum "app/proguard-rules.pro" }}
+            - android-proguard-cache-
+
+      - run:
+          name: Chmod permissions
+          command: sudo chmod +x ./gradlew
+
+      - run:
+          name: Download Dependencies
+          command: ./gradlew androidDependencies
+
+      - save_cache:
+          paths:
+            - ~/.android/build-cache
+            - ~/.gradle/caches
+            - ~/.gradle/wrapper
+            - app/build/intermediates
+          key: android-proguard-cache-{{ .Branch }}-{{ checksum "app/proguard-rules.pro" }}
+
+      - run:
+          name: Build with ProGuard
+          command: ./gradlew :app:assembleDebug :app:assembleRelease :core:assembleDebug :core:assembleRelease --no-daemon --max-workers=2
+
+      - store_artifacts:
+          path: app/build/reports
+          destination: reports
+
+      - run:
+          name: Run Tests
+          command: ./gradlew lint test
+
+      - store_test_results:
+          path: app/build/test-results
+
+      - store_artifacts:
+          path: app/build/outputs/apk/debug/
+          destination: artifact-file-debug
+
+      - store_artifacts:
+          path: app/build/outputs/apk/release/
+          destination: artifact-file-release

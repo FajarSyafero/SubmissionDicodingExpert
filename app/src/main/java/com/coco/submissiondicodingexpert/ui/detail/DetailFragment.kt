@@ -1,11 +1,13 @@
 package com.coco.submissiondicodingexpert.ui.detail
 
+import android.graphics.PorterDuff
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
@@ -77,6 +79,8 @@ class DetailFragment : Fragment() {
             R.drawable.baseline_bookmark_border_24
         }
         binding.ivFavorite.setImageResource(iconResource)
+        context?.let { ContextCompat.getColor(it, R.color.red) }
+            ?.let { binding.ivFavorite.setColorFilter(it, PorterDuff.Mode.SRC_IN) }
     }
 
     private fun setupUi(movie: Movie) {

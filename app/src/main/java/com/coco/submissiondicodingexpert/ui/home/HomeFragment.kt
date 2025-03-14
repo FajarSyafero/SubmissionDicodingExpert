@@ -168,6 +168,7 @@ class HomeFragment : Fragment() {
     }
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.rvMovies.adapter = null
         _binding = null
     }
 }

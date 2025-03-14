@@ -9,6 +9,8 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import javax.inject.Singleton
 
 @Module
@@ -16,10 +18,14 @@ import javax.inject.Singleton
 class LocalModule {
     @Singleton
     @Provides
-    fun provideDatabase(@ApplicationContext context:Context): FavoriteDatabase =
-        Room.databaseBuilder(
+    fun provideDatabase(@ApplicationContext context:Context): FavoriteDatabase {
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("dicoding".toCharArray())
+        val factory = SupportFactory(passphrase)
+        return Room.databaseBuilder(
             context, FavoriteDatabase::class.java, "favorite.db"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration().openHelperFactory(factory).build()
+    }
+
 
     @Provides
     fun provideFavoriteDao(favoriteDatabase: FavoriteDatabase): FavoriteDao =

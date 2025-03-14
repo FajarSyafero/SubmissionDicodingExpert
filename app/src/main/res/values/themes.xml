@@ -3,13 +3,7 @@
     <style name="Base.Theme.SubmissionDicodingExpert" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowBackground">@color/background</item>
     </style>
-
     <style name="Theme.SubmissionDicodingExpert" parent="Base.Theme.SubmissionDicodingExpert" />
-    <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeColor">@color/white</item>
-        <item name="colorControlNormal">@color/white</item>
-        <item name="colorControlActivated">@color/white</item>
-        <item name="colorControlHighlight">@color/white</item>
-    </style>
 </resources>
