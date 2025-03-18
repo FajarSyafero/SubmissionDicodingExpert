@@ -24,7 +24,9 @@
         app:tint="@color/white"
         android:src="@drawable/baseline_bookmark_border_24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/img"
+        tools:ignore="ContentDescription,HardcodedText" />
 
     <ProgressBar
         android:id="@+id/pb_home"
@@ -57,7 +59,7 @@
             android:id="@+id/ed_search_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Search"
+            android:hint="@string/search"
             android:inputType="text"
             android:imeOptions="actionSearch"
             android:textColor="@android:color/white"
@@ -69,12 +71,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_movies"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         tools:listitem="@layout/item_movie"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         app:layout_constraintTop_toBottomOf="@id/search_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

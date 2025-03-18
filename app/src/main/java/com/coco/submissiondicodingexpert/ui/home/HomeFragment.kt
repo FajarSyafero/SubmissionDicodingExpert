@@ -1,7 +1,6 @@
 package com.coco.submissiondicodingexpert.ui.home
 
 import android.content.Context
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -21,7 +20,6 @@ import com.coco.core.ui.MovieAdapter
 import com.coco.submissiondicodingexpert.R
 import com.coco.submissiondicodingexpert.databinding.FragmentHomeBinding
 import com.coco.submissiondicodingexpert.ui.detail.DetailFragment
-import com.google.android.material.internal.ViewUtils.hideKeyboard
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -43,7 +41,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHomeBinding.inflate(layoutInflater,container,false)
         return binding.root
     }

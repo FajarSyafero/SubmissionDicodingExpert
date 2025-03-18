@@ -1,6 +1,6 @@
 package com.coco.favorite.ui.favorite
 
-import androidx.lifecycle.ViewModelProvider
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,7 +10,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.coco.core.ui.MovieAdapter
-import com.coco.favorite.R
 import com.coco.favorite.di.DaggerFavoriteComponent
 import com.coco.favorite.databinding.FragmentFavoriteBinding
 import com.coco.submissiondicodingexpert.di.FavoriteModule
@@ -51,7 +50,7 @@ class FavoriteFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentFavoriteBinding.inflate(layoutInflater,container,false)
         return binding.root
     }

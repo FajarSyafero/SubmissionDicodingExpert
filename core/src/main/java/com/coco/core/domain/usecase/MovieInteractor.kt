@@ -2,7 +2,6 @@ package com.coco.core.domain.usecase
 
 import com.coco.core.data.source.Resource
 import com.coco.core.domain.model.Movie
-import com.coco.core.domain.usecase.MovieUseCase
 import com.coco.core.domain.repository.IMovieRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

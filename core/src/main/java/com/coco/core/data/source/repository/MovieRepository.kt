@@ -33,8 +33,7 @@ class MovieRepository @Inject constructor(private val remoteDataSource: RemoteDa
         return flow {
             emit(Resource.Loading())
             try {
-                val response = remoteDataSource.getSearchMovie(query).first()
-                when (response) {
+                when (val response = remoteDataSource.getSearchMovie(query).first()) {
                     is ApiResponse.Success -> {
                         val movieList = DataMapper.mapSearchResponseToDomain(response.data.results).first()
                         emit(Resource.Success(movieList))

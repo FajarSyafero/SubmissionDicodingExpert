@@ -20,7 +20,7 @@
         android:id="@+id/tv_empty"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Bookmark is Empty"
+        android:text="@string/bookmark_is_empty"
         android:gravity="center"
         android:textSize="40sp"
         android:visibility="gone"
@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/baseline_arrow_back_24"
-            />
+            android:contentDescription="TODO" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

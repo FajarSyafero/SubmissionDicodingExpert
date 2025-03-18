@@ -6,7 +6,6 @@ import androidx.lifecycle.viewModelScope
 import com.coco.core.domain.model.Movie
 import com.coco.core.domain.usecase.MovieUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

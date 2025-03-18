@@ -14,7 +14,8 @@
         tools:src="@tools:sample/avatars"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/img" />
 
     <LinearLayout
         android:id="@+id/btnBack"
@@ -28,7 +29,8 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_arrow_back_24"/>
+            android:src="@drawable/baseline_arrow_back_24"
+            android:contentDescription="@string/img" />
     </LinearLayout>
 
     <LinearLayout
@@ -44,14 +46,15 @@
             android:id="@+id/ivFavorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_bookmark_border_24"/>
+            android:src="@drawable/baseline_bookmark_border_24"
+            android:contentDescription="@string/img" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/tv_name_movies"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Thor: Love and Thunder"
+        android:text="@string/lorem_ipsum"
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:layout_margin="20dp"
