@@ -62,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/img_detail"/>
     <TextView
-        android:id="@+id/tv_about_sinopsis"
+        android:id="@+id/tvAboutSinopsis"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

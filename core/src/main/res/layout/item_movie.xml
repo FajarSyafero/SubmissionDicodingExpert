@@ -27,11 +27,11 @@
             android:contentDescription="@string/img" />
 
         <TextView
-            android:id="@+id/tvMovieTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingTop="8dp"
+            android:id="@+id/tvMovieTitle"
             android:text="@string/lorem_ipsum"
             android:textColor="@android:color/white"
             android:textSize="16sp"

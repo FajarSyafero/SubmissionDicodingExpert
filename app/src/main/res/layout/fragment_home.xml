@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/btn_bookmark"
+        android:id="@+id/btnBookmark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:tint="@color/white"
@@ -29,7 +29,7 @@
         tools:ignore="ContentDescription,HardcodedText" />
 
     <ProgressBar
-        android:id="@+id/pb_home"
+        android:id="@+id/pbHome"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -56,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_welcome">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ed_search_view"
+            android:id="@+id/edSearchView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/search"
@@ -69,7 +69,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_movies"
+        android:id="@+id/rvMovies"
         android:layout_width="0dp"
         android:layout_height="0dp"
         tools:listitem="@layout/item_movie"
